@@ -25,15 +25,39 @@
       padding: 30px;
       border-radius: 10px;
     }
+
+    .login-icon {
+    float: right;
+    width:50px;
+    height:50px;
+    margin-top: -30px; 
+    margin-right: 10px; 
+  }
+
+    .login-text {
+      float: right;
+      width:50px;
+      height:20px;
+      margin-top:-30px;
+      margin-right:10px;
+    }
+
   </style>
 </head>
 <body>
+
   <div class="container w-50">
     <div class="text">
       <h1 class="text-center">Contattaci</h1>
       <hr class="w-full m-auto bg-dark">
     </div>
-    <form action="action.php" method="POST" autocomplete="off">
+
+  <div class="login-container">
+    <a href="login.php" class="login-link"> <img src="asset/ufo.png" alt="Login Icon" class="login-icon" > <br> <br>  
+    <span class="login-text"> LOGIN </span> </a>
+  </div>
+
+    <form action="database.php" method="POST" autocomplete="off">
       <div class="nome my-4">
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome" class="form-control" placeholder="Inserisci qui il tuo nome" required>
@@ -55,6 +79,10 @@
         <textarea name="messaggio" id="messaggio" class="form-control" cols="30" rows="5" placeholder="Scrivi un messaggio..."></textarea>
       </div>
       <button class="btn btn-success mt-4">Invia Messaggio</button>
+      
+      
     </form>
+
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG"
+
