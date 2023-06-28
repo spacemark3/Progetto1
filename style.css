@@ -1,9 +1,12 @@
 body {
-    background: #1690A7;
-    display: flex;
-    justify-content:center;
-    align-items:center;
+    background-image: url('asset/nasa-Yj1M5riCKk4-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
