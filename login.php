@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    
     <form action="login2.php" method="post">
         <h2>LOGIN</h2>
 
