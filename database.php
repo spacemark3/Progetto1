@@ -19,7 +19,7 @@ $telefono = $_POST['telefono'];
 $messaggio = $_POST['messaggio'];
 
 $to = 'mark3andro@gmail.com'; 
-$subject = 'Form completato';
+$subject = 'Dati form ricevuti';
 $message = "Nome: $nome\n"
          . "Cognome: $cognome\n"
          . "Email: $email\n"
@@ -29,21 +29,43 @@ $message = "Nome: $nome\n"
 $headers = "From: mark3andro@gmail.com";
 $headers .= "\r\nReply-To: $email";
 
+$mailSent = false; 
+
 if (mail($to, $subject, $message, $headers)) {
-    echo "Messaggio inviato! ";
-} else {
-    echo "Non è stato possibile inviare il messaggio";
+    $mailSent = true; 
 }
 
 // SQL, con l'input che riceviamo dai campi compilati
 $sql = "INSERT INTO leads (nome, cognome, email, telefono, messaggio) 
         VALUES ('$nome', '$cognome', '$email', '$telefono', '$messaggio')";
 
+$dbSaved = false; 
+
 if ($conn->query($sql) === TRUE) {
-    echo "I dati sono stati salvati nel database";
-} else {
-    echo "Non è stato possibile inviare il messaggio: " . $sql . "<br>" . $conn->error;
+    $dbSaved = true;
 }
+
 // chiudiamo la connessione col database
 $conn->close();
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message Button</title>
+</head>
+<body>
+    <?php if ($mailSent && $dbSaved): ?>
+        <h3>Messaggio inviato e dati salvati nel database</h3>
+    <?php elseif ($mailSent): ?>
+        <h3>Messaggio inviato!</h3>
+    <?php elseif ($dbSaved): ?>
+        <h3>I dati sono stati salvati nel database</h3>
+    <?php else: ?>
+        <h3>Non è stato possibile inviare il messaggio o salvare i dati nel database</h3>
+    <?php endif; ?>
+
+    <button onclick="history.back()">Torna indietro</button>
+</body>
+</html>
+
