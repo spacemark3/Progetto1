@@ -5,6 +5,7 @@ accedere all'area riservata dopo l'autenticazione (LOGIN2.PHP, per sanitizzare e
 LOGOUT.PHP una funzionalita all'interno della home per riportarci nella pagina login.
 Le funzionalità crud nella home sono rappresentate da bottoni:CANCELLA.PHP permette appunto di cancellare i dati direttamente nella pagina,AGGIORNA.PHP permette di aggiornare le credenziali dell'utente e aggiungere anche un nuovo utente con NUOVO.PHP.
 
+nella cartella Database serve per replicare il database.
 
 
 
