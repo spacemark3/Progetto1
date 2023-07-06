@@ -5,44 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Form Contatti</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      background-image: url('asset/nasa-Yj1M5riCKk4-unsplash.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center bottom;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .container {
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 30px;
-      border-radius: 10px;
-    }
-
-    .login-icon {
-    float: right;
-    width:50px;
-    height:50px;
-    margin-top: -30px; 
-    margin-right: 10px; 
-  }
-
-    .login-text {
-      float: right;
-      width:50px;
-      height:20px;
-      margin-top:-30px;
-      margin-right:10px;
-    }
-
-  </style>
+<link rel="stylesheet" type="text/css" href="styleindex.css">
 </head>
 <body>
 
