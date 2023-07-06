@@ -8,7 +8,7 @@ Le funzionalità crud nella home sono rappresentate da bottoni:CANCELLA.PHP perm
 nella cartella Database serve per replicare il database.
 
 Dati di login per utenti area riservata
-Username: spacex Password:1234
+Username: spacex Password:1234 Email: space123@gmail.com
 
 
 
