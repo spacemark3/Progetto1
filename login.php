@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+        crossorigin="anonymous">
+    
 </head>
 <body>
     
@@ -17,18 +23,16 @@
                  <?php echo $_GET['error']; ?> 
             </p>
         <?php } ?>
-        
 
-        <label> User Name </label>
+        <label> Username </label>
         <input type="text" name="username" placeholder="username"> <br>
 
         <label> Password </label>
         <input type="password" name="password" placeholder="password"> <br>
 
-        <button type="submit"> LOGIN </button>
+        <button type="submit" class="btn btn-success mt-4"> LOGIN </button> <br> <br> <br>
 
-
-
+        <a href="forgot-password.php" class="password_dimenticata">Hai dimenticato la password? </a>
     </form>
 </body>
 </html>
