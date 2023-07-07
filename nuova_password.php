@@ -1,6 +1,7 @@
 <?php
 SESSION_START();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,20 +41,16 @@ SESSION_START();
                         die("Failed to connect to MySQL: " . $mysqli->connect_error);
                     }
 
-                    $hashed_password = password_hash($pass1, PASSWORD_DEFAULT);
+            
+                    $update_query = "UPDATE users SET password = '$pass1' WHERE email = '$email'";
+                    $result = $mysqli->query($update_query);
 
-                    $update_query = "UPDATE users SET password = ? WHERE email = ?";
-                    $stmt = $mysqli->prepare($update_query);
-                    $stmt->bind_param("ss", $hashed_password, $email);
-                    $stmt->execute();
-
-                    if ($stmt->affected_rows > 0) {
+                    if ($result) {
                         echo "Password aggiornata!";
                     } else {
                         echo "Errore nel recupero della password";
                     }
 
-                    $stmt->close();
                     $mysqli->close();
                 }
             }
