@@ -20,7 +20,7 @@ if (!$IS_RIGHT_IMPUT) {
    
 </head>
 <body>
-    <h1> Ciao, <?php echo $_SESSION['name'];?> </h1> <br> <br>
+    <h1> Ciao, <?php echo $_SESSION['user_name'];?> </h1> <br> <br>
     <a href="logout.php"> Logout  </a> <br> <br>
 
   
@@ -33,7 +33,7 @@ if (!$IS_RIGHT_IMPUT) {
       <th scope="col">ID </th>
       <th scope="col">Username</th>
       <th scope="col">Password</th>
-      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
       <th scope="col">Operazioni</th>
     </tr>
   </thead>
@@ -48,13 +48,13 @@ if($result){
             $id=$row['id'];
             $user_name=$row['user_name'];
             $password=$row['password'];
-            $name=$row['name'];
+            $email=$row['email'];
             
             echo '<tr>
             <th scope="row">'.$id.'</th>
             <td>'.$user_name.'</td>
             <td>'.$password.'</td>
-            <td>'.$name.'</td>
+            <td>'.$email.'</td>
           <td>
         <button class="btn btn-primary" > <a href="aggiorna.php?aggiornaid='.$id.'"> Aggiorna </a> </button>
         <button class="btn btn-danger" > <a href="cancella.php?cancellaid='.$id.'"> Cancella </a> </button>
