@@ -32,7 +32,7 @@
 
         <button type="submit" class="btn btn-success mt-4"> LOGIN </button> <br> <br> <br>
 
-        <a href="forgot-password.php" class="password_dimenticata">Hai dimenticato la password? </a>
+        <a href="passdimenticata.php" class="passdimenticata.php">Hai dimenticato la password? </a>
     </form>
 </body>
 </html>
