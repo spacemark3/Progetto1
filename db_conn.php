@@ -1,12 +1,15 @@
-<?php // conessione al database per gli utenti
-$dbhost="localhost";
-$username="root";
-$password="";
+<?php 
+$host = "localhost";
+$username = "root";
+$password = "";
+$db_name = "test_db";
 
-$db_name="test_db";
+$conn = new mysqli($host, $username, $password, $db_name);
 
-$conn=mysqli_connect($dbhost,$username,$password,$db_name);
-
-if (!$conn) {
-    echo "Connection failed!";
+if ($conn->connect_error) {
+    die("Failed to connect to MySQL: " . $conn->connect_error);
 }
+
+return $conn;
+
+?>
