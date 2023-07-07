@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Form Contatti</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="styleindex.css">
+  <link rel="stylesheet" type="text/css" href="styleindex.css">
 </head>
 <body>
 
@@ -16,7 +16,7 @@
     </div>
 
   <div class="login-container">
-    <a href="login.php" class="login-link"> <img src="asset/ufo.png" alt="Login Icon" class="login-icon" > <br> <br>  
+    <a href="login.php" class="btn btn-success mt-4"> <img src="asset/ufo.png" alt="Login Icon" class="login-icon" > <br> <br>  
     <span class="login-text"> LOGIN </span> </a>
   </div>
 
@@ -47,5 +47,6 @@
     </form>
 
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG"
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG">
+</body>
+</html>
