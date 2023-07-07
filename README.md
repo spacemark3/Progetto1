@@ -8,7 +8,11 @@ Le funzionalità crud nella home sono rappresentate da bottoni:CANCELLA.PHP perm
 nella cartella Database serve per replicare il database.
 
 Dati di login per utenti area riservata
-Username: spacex Password:1234 Email: space123@gmail.com
+Username: spacex Password:321 Email: space123@gmail.com
+
+funzionalità per password dimenticata:
+
+dalla pagina login saremo reindirizzati al file PASSDIMENTICATA.PHP dove verrà chiesto l'email utilizzato dell'account, inviata la richiesta il file RECUPERAPASS.PHP verificheà se l'email è valida(esistente) o meno, se avremo un risultato VERO verrà creata un link, cliccandoci sarà poi possibile impostare la nuova password, file NUOVA_PASSWORD.PHP
 
 
 
