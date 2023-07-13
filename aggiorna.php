@@ -1,62 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password dimenticata?</title>
+<?php
+include 'db_conn.php';
+$id = $_GET['aggiornaid'];
+$sql = "SELECT * FROM users WHERE id=$id";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-        rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-        crossorigin="anonymous">
+$user_name = $row['user_name'];
+$password = $row['password'];
+$email = $row['email'];
 
-</head>
+if (isset($_POST['submit'])) {
+    $user_name = $_POST['user_name'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];
 
-<body>
-<?php if (isset($_POST['recupero'])) {?> 
-    <form method="POST" action="">
-        Email: <input type="text" name="email" placeholder="scrivi qui..">
-        <input type="submit" name="recupero" value="Recupera la password">
-    </form>
-<?php 
-} else {
-    if (isset($_POST['email'])) {
-        $email = $_POST["email"];
-        if ($email == "")
-            echo "Non lasciare vuoto il campo";
-        else {
-            $host = "localhost";
-            $username = "root";
-            $password = "";
-            $database = "test_db";
-            
-            $mysqli = new mysqli($host, $username, $password, $database);
-            
-            if ($mysqli->connect_errno) {
-                die("Failed to connect to MySQL: " . $mysqli->connect_error);
-            }
-    
-            $sql = "SELECT * FROM users WHERE email='$email'";
-            $result = $mysqli->query($sql);
+    $sql = "UPDATE users SET user_name='$user_name', password='$password', email='$email' WHERE id=$id";
+    $result = mysqli_query($conn, $sql);
 
-            if ($result) {
-                $num = $result->num_rows;
-                if ($num == 1) {
-                    session_start();
-                    $_SESSION['email'] = $email;
-                    echo "<a href='nuova_password.php'> prosegui per recuperare la password </a>";
-                } else {
-
-                    echo  " Email non esistente,<br>
-                     <a href='passdimenticata.php'> riprova <h1>";
-                }
-            }
-            
-            $mysqli->close();
-        }
+    if ($result) {
+        echo "updated successfully";
+        header('location:home.php');
+    } else {
+        die(mysqli_error($conn));
     }
 }
 ?>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aggiornamento</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+        crossorigin="anonymous">
+</head>
+<body>
+
+    <form method="post">
+        <div class="form-group">
+            <label> Username </label>
+            <input type="text" class="form-control" placeholder="Scegli un username" name="user_name"
+                   autocomplete="off" value="<?php echo $user_name; ?>">
+        </div>
+        <div class="form-group">
+            <label> Password </label>
+            <input type="text" class="form-control" placeholder="Scegli una password" name="password"
+                   autocomplete="off" value="<?php echo $password; ?>">
+        </div>
+        <div class="form-group">
+            <label> Email </label>
+            <input type="text" class="form-control" placeholder="Inserisci il tuo nome" name="email"
+                   value="<?php echo $email; ?>">
+        </div>
+        <button type="submit" class="btn btn-primary" name="submit">Aggiorna</button>
+    </form>
 
 </body>
 </html>
