@@ -27,8 +27,8 @@
         else {
             $host = "localhost";
             $username = "root";
-            $password = "";
-            $database = "test_db";
+            $password = "123";
+            $database = "homestead";
             
             $mysqli = new mysqli($host, $username, $password, $database);
             

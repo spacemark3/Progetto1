@@ -1,9 +1,9 @@
 <?php
 // connessione al database
 $host = 'localhost';
-$dbname = 'login';
+$dbname = 'homestead';
 $username = 'root';
-$password = '';
+$password = '123';
 
 $conn = new mysqli($host, $username, $password, $dbname);
 
